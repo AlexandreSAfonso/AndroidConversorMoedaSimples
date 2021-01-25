@@ -18,6 +18,8 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textAlignment="center"
+        android:inputType="numberSigned"
         android:id="@+id/edit_value"
         android:text="edit_value"/>
     <TextView
