@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.mViewHolder.editValue = findViewById(R.id.edit_value);
+        this.mViewHolder.EditValue = findViewById(R.id.edit_value);
         this.mViewHolder.TextDolar = findViewById(R.id.text_dolar);
         this.mViewHolder.TextEuro = findViewById(R.id.text_euro);
         this.mViewHolder.ButtonCalculate = findViewById(R.id.button_calculate);
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.button_calculate) {
-            String value = this.mViewHolder.editValue.getText().toString();
+            String value = this.mViewHolder.EditValue.getText().toString();
             if ("".equals(value)) {
                 this.clearValues();
                 Toast.makeText(this, this.getString(R.string.informe_valor), Toast.LENGTH_LONG).show();
@@ -44,12 +44,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void clearValues() {
+        this.mViewHolder.EditValue.setText("");
         this.mViewHolder.TextDolar.setText("");
         this.mViewHolder.TextEuro.setText("");
     }
 
     private static class ViewHolder {
-        EditText editValue;
+        EditText EditValue;
         TextView TextDolar;
         TextView TextEuro;
         Button ButtonCalculate;
